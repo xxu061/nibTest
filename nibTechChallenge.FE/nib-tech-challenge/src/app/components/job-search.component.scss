@@ -2,14 +2,56 @@ $nib-theme-background-color: #008000;
 $nib-theme-background-color__hover: #01bb01;
 $nib-theme-foreground-color: #ffffff;
 
-.job-search-theme{
-    background-color: $nib-theme-background-color;
-    color: $nib-theme-foreground-color;
+.job-search-theme {
+  background-color: $nib-theme-background-color;
+  color: $nib-theme-foreground-color;
 }
 
-.job-search-row{
-    cursor: pointer;
-    &:hover{ 
+.job-search-row {
+  cursor: pointer;
+  &:hover {
     background-color: $nib-theme-background-color__hover;
-    }
+  }
+}
+
+.large-date-display {
+  display: none;
+  @media (min-width: 992px) {
+    display: inline;
+  }
+  @media (min-width: 1200px) {
+    display: inline;
+  }
+}
+
+.small-date-display {
+  display: inline;
+  @media (min-width: 992px) {
+    display: none;
+  }
+  @media (min-width: 1200px) {
+    display: none;
+  }
+}
+
+.dropdown-responsive {
+  @media (max-width: 500px) {
+    float: none;
+    text-align: center;
+    margin-right: 50px;
+    margin-bottom: 10px;
+    
+  }
+  @media (min-width: 992px) {
+  }
+  @media (min-width: 1200px) {
+  }
+}
+
+#dropdownMenuButton{
+    width: 300px;
+}
+
+.dropdown-menu{
+    width: 300px;
 }

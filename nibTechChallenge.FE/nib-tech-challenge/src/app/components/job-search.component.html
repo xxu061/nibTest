@@ -2,10 +2,10 @@
   <div class="border-bottom">
     <div class="row">
       <div class="col"><h2>Our Vacancies</h2></div>
-      <div class="col">
-        <div class="dropdown float-right">
+      <div class="col ">
+        <div class="dropdown float-right dropdown-responsive">
           <button
-            class="btn dropdown-toggle"
+            class="btn btn-light dropdown-toggle"
             type="button"
             id="dropdownMenuButton"
             data-toggle="dropdown"
@@ -26,22 +26,34 @@
       </div>
     </div>
   </div>
-  <div class="m-3" >
-    <div class="row m-3 job-search-row p-2" *ngFor="let job of filteredJobs" (click)="GoToJobDetails(job)">
+  <div class="m-3">
+    <div
+      class="row m-2 job-search-row p-2"
+      *ngFor="let job of filteredJobs"
+      (click)="GoToJobDetails(job)"
+    >
       <div class="col-lg">
         <div class="row">
           <div class="col float-left bold">
             <h5>{{ job.title }}</h5>
           </div>
-          <div class="col float-right text-right">
-            {{ job.location.name | uppercase}}
+          <div class="col float-right text-right large-date-display">
+            {{ job.location.name | uppercase }}
+          </div>
+        </div>
+        <div class="small-date-display">
+          <div class="small-date-display">
+            {{ job.location.name | uppercase }}
+          </div>
+          <div class="small-date-display float-right">
+            {{ job.openDate | date: "dd/MMM/yyyy" }}
           </div>
         </div>
         <div>
           {{ job.description | descriptionFilter }}
         </div>
       </div>
-      <div class="col-sm-2 text-right float-right">
+      <div class="col-sm-2 text-right float-right large-date-display">
         <date-display [date]="job.openDate"></date-display>
       </div>
     </div>
