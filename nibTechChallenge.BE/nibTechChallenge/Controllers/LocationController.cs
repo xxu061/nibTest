@@ -14,7 +14,7 @@ namespace nibTechChallenge.Controllers
     public class LocationController : ControllerBase
     {
         private readonly ILogger<LocationController> _logger;
-        private readonly ILocationService _service; 
+        private readonly ILocationService _service;
         public LocationController(ILocationService service, ILogger<LocationController> logger)
         {
             _logger = logger;

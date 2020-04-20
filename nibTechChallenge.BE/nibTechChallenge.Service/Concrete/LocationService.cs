@@ -9,12 +9,28 @@ namespace nibTechChallenge.Service
 {
     public class LocationService : ILocationService
     {
-        ILocationRepo _repo;
-        public LocationService(ILocationRepo repo)
+        private readonly ILocationRepo _repo;
+        private readonly IJobService _jobService;
+        public LocationService(ILocationRepo repo, IJobService jobService)
         {
             _repo = repo;
+            _jobService = jobService;
         }
         public async Task<IList<Location>> Get()
+        {
+            var jobs = await _jobService.Get();
+
+            var availableLocations = jobs.Select(j => j.Location).Distinct().ToList();
+
+            if (!availableLocations.Any(l => l.Id == 0))
+            {
+                availableLocations.Add(AddAllLocation());
+            }
+
+            return availableLocations;
+        }
+
+        public async Task<IList<Location>> GetAll()
         {
             var result = await _repo.Get();
 

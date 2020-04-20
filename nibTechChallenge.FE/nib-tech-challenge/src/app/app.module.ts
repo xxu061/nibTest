@@ -11,12 +11,14 @@ import { JobSearchEffect } from './effects/jobSearchEffect';
 import { StoreModule } from '@ngrx/store';
 import { JobSearchService } from './services/jobSearchService';
 import { DescriptionFilterPipe } from './Pipes/descriptionPipe';
+import { JobDetailsComponent } from './components/job-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     JobSearchComponent,
-    DescriptionFilterPipe
+    DescriptionFilterPipe,
+    JobDetailsComponent
   ],
   imports: [
     BrowserModule,

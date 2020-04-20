@@ -8,5 +8,6 @@ export const GETLOCATIONS_FAIL = createAction('[JOBSEARCH] getlocations fail');
 export const GETJOBS = createAction('[JOBSEARCH] getjobs');
 export const GETJOBS_SUCCESS = createAction('[JOBSEARCH] getjobs success', (payload: Job[]) => ({payload}));
 export const GETJOBS_FAIL = createAction('[JOBSEARCH] getjobs fail');
+export const SELECTLOCATION = createAction('[JOBSEARCH] select location', (payload: Location) => ({payload}));
 
 

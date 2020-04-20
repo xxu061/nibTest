@@ -10,6 +10,7 @@ export interface AppState {
 export interface IJobSearchState{
     locations?: Array<Location>;
     jobs?: Array<Job>;
+    selectedLocation?: Location;
 }
 
 export const reducers: ActionReducerMap<AppState> = {

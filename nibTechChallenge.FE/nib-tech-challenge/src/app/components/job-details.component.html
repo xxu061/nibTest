@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-lg">
+      <div class="row">
+        <div class="col float-left bold">
+          <h5>{{ job.title }}</h5>
+        </div>
+        <div class="col float-right text-right">
+          {{ job.location.name | uppercase}}
+        </div>
+      </div>
+      <div>
+        {{ job.description}}
+      </div>
+    </div>
+    <div class="col-sm-2 text-right float-right">
+      {{ job.openDate }}
+    </div>
+  </div>

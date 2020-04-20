@@ -4,12 +4,18 @@ import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { IJobSearchState, AppState } from '../states/jobSearchState';
 import { Job } from '../models/job';
-import { GETLOCATIONS, GETJOBS } from '../actions/jobSearchActions';
+import {
+  GETLOCATIONS,
+  GETJOBS,
+  SELECTLOCATION,
+} from '../actions/jobSearchActions';
 import { Router } from '@angular/router';
+import { timeout } from 'rxjs/operators';
 
 @Component({
   selector: 'app-job-search',
   templateUrl: './job-search.component.html',
+  styleUrls: ['./job-search.component.sass'],
 })
 export class JobSearchComponent implements OnInit {
   locations: Location[];
@@ -24,32 +30,37 @@ export class JobSearchComponent implements OnInit {
       .select((s) => s.jobSearchState)
       .subscribe((s) => {
         this.locations = s.locations;
-        if(this.locations !== undefined){
+        if (!s.selectedLocation && this.locations !== undefined) {
           this.selectedLocation = this.locations.filter((l) => l.id === 0)[0];
         }
-      });
 
-    this.store
-      .select((s) => s.jobSearchState)
-      .subscribe((s) => {
         this.jobs = s.jobs;
         this.filteredJobs = this.jobs;
+
+        if (s.selectedLocation) {
+          this.selectLocation(s.selectedLocation, false);
+        }
       });
 
     this.store.dispatch(GETLOCATIONS());
     this.store.dispatch(GETJOBS());
   }
 
-  selectLocation(location: Location) {
+  selectLocation(location: Location, updateState: boolean = true) {
     console.log(location);
     this.selectedLocation = location;
     this.filteredJobs =
       location.id === 0
         ? this.jobs
         : this.jobs.filter((j) => j.location.id === location.id);
+
+    if (updateState) {
+      this.store.dispatch(SELECTLOCATION(this.selectedLocation));
+    }
   }
 
-  selectJob(job: Job) {
-    this.selectedJob = job;
+  GoToJobDetails(job: Job) {
+    console.log('navigating');
+    this.route.navigate(['jobDetails', { job: JSON.stringify(job) }]);
   }
 }
