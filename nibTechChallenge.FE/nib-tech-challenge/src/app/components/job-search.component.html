@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col">Our Vacancies</div>
+  <div class="col">
+    <div class="dropdown float-right">
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        {{selectedLocation?.name}}
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" *ngFor="let location of locations" (click)="selectLocation(location)">{{
+          location?.name
+        }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="row" *ngFor="let job of filteredJobs">
+    <div class="col">
+      <div class="row">
+        <div class="col float-left">
+          {{ job.title }}
+        </div>
+        <div class="col float-right text-right">
+          {{ job.location.name }}
+        </div>
+      </div>
+      <div>
+        {{ job.description }}
+      </div>
+    </div>
+    <div class="col text-right">
+      {{job.openDate}}
+    </div>
+  </div>
+</div>

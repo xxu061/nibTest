@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\nibTechChallenge.Domain\nibTechChallenge.Domain.csproj" />
+    <ProjectReference Include="..\nibTechChallenge.Repo\nibTechChallenge.Repo.csproj" />
+  </ItemGroup>
+
+</Project>
