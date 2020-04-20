@@ -5,7 +5,11 @@ export class AppPage {
     return browser.get(browser.baseUrl) as Promise<unknown>;
   }
 
-  getTitleText(): Promise<string> {
-    return element(by.css('app-root .content span')).getText() as Promise<string>;
+  getJobsTitle(): Promise<string> {
+    return element(by.css('app-root .job-search-theme .job-search-row h5')).getText() as Promise<string>;
+  }
+
+  clickJobLink(): Promise<void>{
+    return element(by.css('app-root .job-search-theme .job-search-row')).click() as Promise<void>;
   }
 }

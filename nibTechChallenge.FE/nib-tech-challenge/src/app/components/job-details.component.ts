@@ -12,6 +12,5 @@ export class JobDetailsComponent{
 
     constructor(private router: ActivatedRoute){
         this.job = JSON.parse(this.router.snapshot.paramMap.get('job'));
-        console.log(this.job);
     }
 }
