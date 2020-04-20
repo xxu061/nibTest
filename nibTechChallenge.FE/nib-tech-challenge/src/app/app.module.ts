@@ -10,11 +10,13 @@ import { EffectsModule } from '@ngrx/effects';
 import { JobSearchEffect } from './effects/jobSearchEffect';
 import { StoreModule } from '@ngrx/store';
 import { JobSearchService } from './services/jobSearchService';
+import { DescriptionFilterPipe } from './Pipes/descriptionPipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    JobSearchComponent
+    JobSearchComponent,
+    DescriptionFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import { JobSearchService } from './services/jobSearchService';
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([JobSearchEffect])
   ],
-  providers: [JobSearchService],
+  exports: [DescriptionFilterPipe],
+  providers: [JobSearchService, DescriptionFilterPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {
