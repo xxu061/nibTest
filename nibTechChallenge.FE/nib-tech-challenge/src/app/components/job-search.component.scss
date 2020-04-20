@@ -1,0 +1,15 @@
+$nib-theme-background-color: #008000;
+$nib-theme-background-color__hover: #01bb01;
+$nib-theme-foreground-color: #ffffff;
+
+.job-search-theme{
+    background-color: $nib-theme-background-color;
+    color: $nib-theme-foreground-color;
+}
+
+.job-search-row{
+    cursor: pointer;
+    &:hover{ 
+    background-color: $nib-theme-background-color__hover;
+    }
+}

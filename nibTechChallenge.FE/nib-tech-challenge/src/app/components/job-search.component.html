@@ -26,8 +26,8 @@
       </div>
     </div>
   </div>
-  <div>
-    <div class="row" *ngFor="let job of filteredJobs" (click)="GoToJobDetails(job)">
+  <div class="m-3" >
+    <div class="row m-3 job-search-row p-2" *ngFor="let job of filteredJobs" (click)="GoToJobDetails(job)">
       <div class="col-lg">
         <div class="row">
           <div class="col float-left bold">
@@ -42,7 +42,7 @@
         </div>
       </div>
       <div class="col-sm-2 text-right float-right">
-        {{ job.openDate }}
+        <date-display [date]="job.openDate"></date-display>
       </div>
     </div>
   </div>

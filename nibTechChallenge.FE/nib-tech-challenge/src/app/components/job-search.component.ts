@@ -15,7 +15,7 @@ import { timeout } from 'rxjs/operators';
 @Component({
   selector: 'app-job-search',
   templateUrl: './job-search.component.html',
-  styleUrls: ['./job-search.component.sass'],
+  styleUrls: ['./job-search.component.scss'],
 })
 export class JobSearchComponent implements OnInit {
   locations: Location[];
