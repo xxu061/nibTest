@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nibTechChallenge.Service", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nibTechChallenge.Repo", "nibTechChallenge.Repo\nibTechChallenge.Repo.csproj", "{E9D74E06-9028-4373-9E5E-44FBD591864A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nibTechChallenge.DTO", "nibTechChallenge.DTO\nibTechChallenge.DTO.csproj", "{BCDD1413-7ADF-48E0-8990-9E3C20B8805A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nibTechChallenge.DTO", "nibTechChallenge.DTO\nibTechChallenge.DTO.csproj", "{BCDD1413-7ADF-48E0-8990-9E3C20B8805A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nibTechChallenge.Test", "nibTechChallenge.Test\nibTechChallenge.Test.csproj", "{D2FCEA64-6D64-4304-870F-724A429FA54A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{BCDD1413-7ADF-48E0-8990-9E3C20B8805A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCDD1413-7ADF-48E0-8990-9E3C20B8805A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCDD1413-7ADF-48E0-8990-9E3C20B8805A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2FCEA64-6D64-4304-870F-724A429FA54A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2FCEA64-6D64-4304-870F-724A429FA54A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2FCEA64-6D64-4304-870F-724A429FA54A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2FCEA64-6D64-4304-870F-724A429FA54A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
